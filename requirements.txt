@@ -1,0 +1,6 @@
+langchain
+langchain_community
+youtube-transcript-api
+langchain_mistralai
+transformers
+streamlit
