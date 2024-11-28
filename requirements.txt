@@ -14,3 +14,4 @@ nltk
 PyPDF2
 pdfplumber
 pypdf
+nltk
