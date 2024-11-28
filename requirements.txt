@@ -4,3 +4,13 @@ youtube-transcript-api
 langchain_mistralai
 transformers
 streamlit
+scikit-learn
+faiss-cpu
+numpy
+plotly
+mistralai
+torch==2.4.1
+nltk
+PyPDF2
+pdfplumber
+pypdf
