@@ -1,133 +1,111 @@
 
-# **LLM for Data Mining**
+# **LLM для Добування Даних**
 
-A system for solving data mining tasks using Large Language Models (LLMs). This repository explores the integration of state-of-the-art language models to handle complex data processing, analysis, and visualization tasks efficiently.
-
----
-
-## **Table of Contents**
-1. [Features](#features)
-2. [Installation](#installation)
-3. [Usage](#usage)
-4. [Project Structure](#project-structure)
-5. [Examples](#examples)
-6. [Contributing](#contributing)
-7. [License](#license)
+Система для вирішення завдань data mining використанням великих мовних моделей (LLM). Цей репозиторій досліджує інтеграцію сучасних мовних моделей для ефективної обробки, аналізу та візуалізації даних.
 
 ---
 
-## **Features**
-- Leverages LLMs for diverse data mining tasks such as:
-  - Data preprocessing and cleaning
-  - Exploratory data analysis (EDA)
-  - Pattern recognition and clustering
-  - Predictive modeling
-  - Natural language interpretation of data insights
-- Streamlined integration with Python libraries like `pandas`, `scikit-learn`, and `matplotlib`.
-- Extensible framework for new data mining workflows.
-- Interactive interface with `streamlit` for easy experimentation and deployment.
+## **Зміст**
+1. [Можливості](#можливості)
+2. [Встановлення](#встановлення)
+3. [Використання](#використання)
+5. [Приклади](#приклади)
+6. [Контакти](#контакти)
 
 ---
 
-## **Installation**
+## **Можливості**
+- Використання LLM для виконання різних завдань добування даних, таких як:
+  - Підсумовування (Summarization)
+  - Класифікація
+  - Кластеризація
+  - Регресійний аналіз
+  - Кореляційний аналіз
+  - Візуалізація даних
+- Розширювана архітектура для створення нових робочих процесів.
+- Інтерактивний інтерфейс на основі `streamlit` для зручного тестування та розгортання.
 
-1. Clone the repository:
+---
+
+## **Встановлення**
+
+1. Клонувати репозиторій:
    ```bash
    git clone https://github.com/YaroslavPanasiuk/LLM-for-data-mining.git
    cd LLM-for-data-mining
    ```
 
-2. Create a virtual environment and activate it:
+2. Запустити файл ```run.ps1``` (Windows) або  ```run.sh``` (Linux). Цей файл має автоматично створити віртуальне середовище python, встановити всі залежності та запустити веб-додаток. Якщо це не працює, можна зробити це вручну (описано в наступних кроках)
+
+3. Створити віртуальне середовище та активувати його:
    ```bash
    python -m venv venv
-   source venv/bin/activate    # On Windows: .\venv\Scripts\activate
+   .\\venv\\Scripts\\activate  # У Linux: source venv/bin/activate
    ```
 
-3. Install the required dependencies:
+4. Встановити необхідні залежності:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. Run the application:
+5. Запустити додаток:
    ```bash
    streamlit run main.py
    ```
 
 ---
 
-## **Usage**
+## **Використання**
 
-1. Prepare your dataset in CSV format.
-2. Launch the Streamlit app:
+1. Підготуйте свій набір даних у форматі CSV, PDF або TXT.
+2. Запустіть додаток Streamlit:
    ```bash
    streamlit run main.py
    ```
-3. Interact with the app to:
-   - Upload your dataset.
-   - Select data mining tasks.
-   - View processed results and generated insights.
+3. Використовуйте додаток для:
+   - Завантаження набору даних.
+   - Вибору завдань для добування даних.
+   - Перегляду оброблених результатів і отриманих інсайтів.
 
-For detailed examples, check the [Examples](#examples) section.
-
----
-
-## **Project Structure**
-```
-LLM-for-data-mining/
-│
-├── .nix-venv/         # Virtual environment (ignored in Git)
-├── data/              # Example datasets and inputs
-├── src/               # Source code for data mining tasks
-│   ├── preprocessing.py
-│   ├── analysis.py
-│   ├── visualization.py
-│   └── ...
-├── requirements.txt   # Python dependencies
-├── main.py            # Streamlit application entry point
-├── README.md          # Project documentation
-└── LICENSE            # License for the repository
-```
+Для детальних прикладів дивіться розділ [Приклади](#приклади).
 
 ---
 
-## **Examples**
+## **Приклади**
 
-### Example: Running a Data Analysis Task
-1. Upload your dataset using the app.
-2. Select the "Data Cleaning" option to handle missing values.
-3. Run EDA to generate:
-   - Summary statistics
-   - Visualizations like histograms and scatter plots
-4. Use LLM to generate a natural language summary of the dataset.
+1. ### Підсумовування тексту:
+    - Оберіть завдання "Summarization" та метод "Mistral Large":
+    ![Оберіть завдання "Summarization" та метод "Mistral Large"](./data_examples/photos/1.png)
+    - Завантажте файл [Essay.txt](https://github.com/YaroslavPanasiuk/LLM-for-data-mining/blob/master/data_examples/essay.txt) у поле для завантажень файлів:
+    ![Завантажте файл Essay.txt у поле для завантажень файлів:](./data_examples/photos/2.png)
+    - Натисніть кнопку Submit
+    - Очікуйте результату (це може зайняти до 2 хвилин часу)
 
----
+2. ### Підсумовування відео:
+    - Оберіть завдання "Summarization" та метод "Mistral Large", в полі "Select file source" оберіть "Use a link to YouTube video":
+    - Вставте посилання на будь-яке аноломовне відео (наприклад, "https://www.youtube.com/watch?v=lG7Uxts9SXs"):
+    - Введіть будь-яке запитання про вміст відео англійською мовою (наприклад, "What is YoutubeLoader?") у відповідне поле, або залишіть його пустим
+    ![Введіть будь-яке запитання про вміст відео англійською мовою](./data_examples/photos/3.png)
+    - Тисніть кнопку Submit
+    - Очікуйте результату (це може зайняти до 2 хвилин часу). Mistral на основі вмісту відео відповість на задане запитання
 
-## **Contributing**
+3. ### Класифікація датасету:
+    - Оберіть завдання "Classification" та метод "Mistral Large", в полі "Select file source" оберіть Use a link to a file:
+    - Вставте посилання "https://raw.githubusercontent.com/mistralai/cookbook/main/data/Symptom2Disease.csv" у відповідне поле:
+    - Введіть слово "label" у поле "Enter the name of the column you want to target:"
+    - Поле "Enter the names of the columns to take the data from:" залишіть пустим, а в полі "Ask your question or describe your task:" напишіть симптоми хвороби англійською мовою, наприклад, "I've been experiencing frequent headaches and vision problems."
+    ![В полі "Ask your question or describe your task:" напишіть симптоми хвороби англійською мовою](./data_examples/photos/4.png)
+    - Тисніть кнопку Submit
+    - Очікуйте результату (це може зайняти до 3 хвилин часу). Mistral на основі датасету визначть діагноз відповідно до симптомів, записаних вами вище
 
-Contributions are welcome! Here's how you can help:
-
-1. Fork the repository.
-2. Create a feature branch:
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Commit your changes and push to your fork.
-4. Open a pull request describing your changes.
-
-For detailed contribution guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md) (if applicable).
-
----
-
-## **License**
-
-This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+### Можете експериментувати з налаштуваннями та завданнями, бажаю успіхів :)
 
 ---
 
-## **Contact**
+## **Контакти**
 
-For questions or feedback, feel free to open an issue or contact the repository maintainer:
-- **Maintainer**: Yaroslav Panasiuk
-- **Email**: [your-email@example.com] *(Replace with actual email if you wish)*
+Якщо у вас є питання або пропозиції, відкрийте issue або зв’яжіться з відповідальним за репозиторій:
+- **Відповідальний**: Ярослав Панасюк
+- **Email**: [yaroslav.panasiuk.1902@gmail.com]
 
 ---
