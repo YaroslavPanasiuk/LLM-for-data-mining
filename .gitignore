@@ -1,0 +1,11 @@
+# Byte-compiled files
+*.pyc
+*.pyo
+__pycache__/
+
+# Virtual environment
+venv/
+.nix-venv/
+
+# Logs
+*.log

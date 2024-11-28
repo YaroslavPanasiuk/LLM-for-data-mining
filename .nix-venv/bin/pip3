@@ -1,4 +1,4 @@
-#!/home/yaros/shared/Projects/master_lnu/.nix-venv/bin/python3.12
+#!/home/yaros/shared/Projects/master_2/.nix-venv/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys
